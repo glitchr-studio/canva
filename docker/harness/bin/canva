@@ -1,0 +1,4 @@
+#!/usr/bin/env php
+<?php
+require '/harness/vendor/autoload.php';
+Canva\Harness\Console::create()->run();

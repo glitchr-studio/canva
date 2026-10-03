@@ -1,0 +1,13 @@
+#!/bin/sh
+# Composes the harness (this core + console + phpunit), installs it when it
+# changed, then runs the command: the console by default, "test" for PHPUnit.
+set -e
+php /canva/core/docker/harness/setup.php
+cd /harness
+if [ ! -f vendor/autoload.php ]; then composer install --no-interaction --no-progress;
+elif [ composer.json -nt composer.lock ]; then composer update --no-interaction --no-progress; fi
+case "${1:-}" in
+    test) shift; exec vendor/bin/phpunit "$@" ;;
+    composer|sh|php) exec "$@" ;;
+    *) exec php /canva/core/docker/harness/bin/canva "$@" ;;
+esac

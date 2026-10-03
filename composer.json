@@ -1,0 +1,29 @@
+{
+    "name": "glitchr/canva",
+    "type": "library",
+    "description": "Canva's Connect API in PHP: a user's designs listed, read and exported (PDF, PNG), through OAuth 2.0 with PKCE - and its Symfony bundle.",
+    "keywords": ["canva", "connect-api", "design", "oauth", "pkce"],
+    "license": "LGPL-3.0-or-later",
+    "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
+    "require": {
+        "php": ">=8.2",
+        "symfony/http-client-contracts": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "symfony/config": "^6.4|^7.0|^8.0",
+        "symfony/dependency-injection": "^6.4|^7.0|^8.0",
+        "symfony/http-client": "^6.4|^7.0|^8.0",
+        "symfony/http-kernel": "^6.4|^7.0|^8.0"
+    },
+    "suggest": {
+        "symfony/http-client": "The HTTP client the API is talked to through",
+        "symfony/framework-bundle": "Canva\\Bridge\\Symfony\\CanvaBundle: the client and the OAuth flow as services"
+    },
+    "autoload": {
+        "psr-4": {"Canva\\": ""},
+        "exclude-from-classmap": ["/Tests/", "/docker/"]
+    },
+    "autoload-dev": {"psr-4": {"Canva\\Tests\\": "Tests/"}},
+    "config": {"sort-packages": true}
+}

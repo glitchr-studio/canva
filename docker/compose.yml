@@ -1,0 +1,23 @@
+# glitchr/canva with your integration's keys in .env:
+#
+#   cp .env.dist .env
+#   docker compose run --rm canva connect      # the URL to open; paste the code back
+#   docker compose run --rm canva me
+#   docker compose run --rm canva designs
+#   docker compose run --rm canva export DAF... pdf
+#   docker compose run --rm canva test
+name: canva-harness
+
+services:
+  canva:
+    build: .
+    image: glitchr/canva-harness
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ..:/canva/core
+      - harness:/harness
+
+volumes:
+  harness:
