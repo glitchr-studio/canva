@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Canva's Connect API in PHP: a user's designs listed, read and exported (PDF, PNG), through OAuth 2.0 with PKCE - and its Symfony bundle.",
     "keywords": ["canva", "connect-api", "design", "oauth", "pkce"],
-    "license": "LGPL-3.0-or-later",
+    "license": "MIT",
     "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
     "require": {
         "php": ">=8.2",
